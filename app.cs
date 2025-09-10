@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 var clientId = args.FirstOrDefault() ?? Environment.GetEnvironmentVariable("SPOTIFY_CLIENT_ID");
 
-while (clientId is null)
+while (string.IsNullOrWhiteSpace(clientId))
 {
     Console.Write("Enter your Spotify Client ID: ");
     clientId = Console.ReadLine();
